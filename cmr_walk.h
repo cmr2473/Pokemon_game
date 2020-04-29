@@ -17,44 +17,54 @@ public:
     ~walk();
 
 protected:
+    //widget events for drawing and timer tests
     void paintEvent(QPaintEvent *);
     void timerEvent(QTimerEvent *);
     void keyPressEvent(QKeyEvent *);
     void keyReleaseEvent(QKeyEvent *);
     void drawObjects(QPainter *);
-
+    //move stop and collision checks
     void moveObjects();
     void stopObjects();
+    void checkCollision();
+    //random check for encounter when on grass
     void encounter();
 
-
+    // changes in game state
     void startGame();
     void pauseGame();
     void stopGame();
+    void healthCheck();
 
-    void checkCollision();
 
 
 private:
+    //movement and location of player
     int x,y,speed;
+    //time counter
     int timerId;
+    //constants
     static const int X_OF_DIRT = 13;
     static const int Y_OF_DIRT = 16;
     static const int N_OF_GRASS = 44;
     static const int N_OF_WALLS = 4;
     static const int DELAY = 5;
     static const int BOTTOM_EDGE = 400;
-
+    //arrays for tilesets
     grass * grassTiles[N_OF_GRASS];
     wall * walls[N_OF_WALLS];
     floor * dirt[X_OF_DIRT * Y_OF_DIRT];
+    //player
     Player * player;
-
+    //gamestates
     bool gameStarted;
     bool paused;
+    //seperate fight class for the fight gamestate
     fight * window2;
 private slots:
+    //slot to unpause after fight closes
     void unPause();
+
 
 
 };

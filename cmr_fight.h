@@ -24,7 +24,7 @@ public:
 signals:
      void finished();
 
-private slots:
+private slots: // most slots redirect to functions that can take in integer inputs
     void handleAttack1();
     void handleAttack2();
     void handleAttack3();
@@ -37,39 +37,50 @@ private slots:
     void changePoke5();
     void changePoke6();
 private:
-    void changePoke(int i);
+    //handle variable button inputs
     void handleAttack(int i);
+    void changePoke(int i);
+    //all buttons
     QPushButton *attacks[4];
     QPushButton *swap;
     QPushButton *swapButton[6];
     Player * player;
+    //all paint events and big screen changes
     void paintScene(QPainter *);
     void swapPaint(QPainter *);
     void closeEvent(QCloseEvent *event);
+    void finishFight(QPainter *, string s);
+    void paintEvent(QPaintEvent *);
+    //cleans up the constructor
     void declareButtons();
     void declareSwap();
+    //button managment functions
     void hideButtons();
     void showButtons();
     void hideSwap();
     void showSwap();
     void changeButtonNames();
-
+    //cleans up the destructor
     void deleteButtons();
     void deleteSwap();
+    //image data for the screen painting
     QImage playerSprite;
     QRect playerRect;
     QImage enemySprite;
     QRect enemyRect;
+    QImage background;
+    QRect backgroundRect;
+    //data for game states
     int CurrentPoke;
     pokemon *enemy;
     bool won;
     bool lost;
     bool changing;
-    void clearConsole();
-protected:
-    void finishFight(QPainter *, string s);
-    void paintEvent(QPaintEvent *);
+    //console output functions
     void print();
+public:
+    static void clearConsole();
+
 
 
 };

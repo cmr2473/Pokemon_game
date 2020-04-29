@@ -4,7 +4,7 @@
 #include <QImage>
 #include <QRect>
 
-
+//floor tile data, inherited by grass
 class floor
 {
 public:

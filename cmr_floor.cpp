@@ -2,6 +2,7 @@
 #include <iostream>
 floor::floor(int x, int y)
 {
+    //location and image initialization
     image.load("dirt.png");
     rect = image.rect();
     rect.translate(x,y);

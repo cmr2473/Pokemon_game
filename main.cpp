@@ -3,13 +3,13 @@
 
 int main(int argc, char * argv[])
 {
-    QApplication app(argc, argv);
+    QApplication app(argc, argv);//creates Qapplication object
 
-    walk window;
+    walk window; // creates walk object
 
     window.resize(480,600);
     window.setWindowTitle("Pokemon but worse");
-    window.show();
+    window.show(); // opens walk window
 
     return app.exec();
 }

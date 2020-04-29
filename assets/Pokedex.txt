@@ -1,0 +1,4 @@
+3
+0  charmander  40  10  10  0  1  2  3  charmander_back.png  charmander_front.png
+1  bulbasaur   50  8   8   4  5  1  2  bulbasaur_back.png   bulbasaur_front.png
+2  squirtle    45  9   9   0  5  3  1  squirtle_back.png    squirtle_front.png 

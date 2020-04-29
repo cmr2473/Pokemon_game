@@ -18,6 +18,7 @@ public:
     QImage & getImage();
 
 private:
+    //image data
     QImage image;
     QRect rect;
 };

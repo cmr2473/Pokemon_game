@@ -4,7 +4,9 @@
 using namespace std;
 
 Player::Player()
+    : User_type()
 {
+    //initializes and allocates all memory
     dx = 0;
     dy = 0;
     fightopen = false;
@@ -15,17 +17,17 @@ Player::Player()
     party[0] = new pokemon(0);
     party[1] = new pokemon(1);
     party[2] = new pokemon(2);
-    cout << "Party: " << endl;
-    for(int k =0; k < partySize ; k++){
-        cout << party[k]->getName() << " " << party[k]->getHealth() << endl;
-    }
+
 
 }
 
 Player::~Player(){
+    //frees pokemon memory
     delete party[0];
+    delete party[1];
+    delete party[2];
 }
-
+//******************************************************* Virtual functions from user_type
 void Player::setDx(int x){
     dx = x;
 }
@@ -49,27 +51,4 @@ void Player::move(){
 
 void Player::resetState(){
     rect.moveTo(INITIAL_X, INITIAL_Y);
-}
-
-QRect Player:: getRect(){
-    return rect;
-}
-
-QImage & Player::getImage(){
-    return image;
-}
-
-bool Player::getFightOpen(){
-    return fightopen;
-}
-
-void Player::setFightOpen(bool l){
-    fightopen = l;
-}
-
-pokemon* Player::getPokemon(int i){
-    return party[i];
-}
-int Player::getPartySize(){
-    return partySize;
 }

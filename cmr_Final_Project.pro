@@ -10,6 +10,7 @@ SOURCES += \
         cmr_grass.cpp \
         cmr_player.cpp \
         cmr_pokemon.cpp \
+        cmr_user_type.cpp \
         cmr_walk.cpp \
         cmr_wall.cpp \
         main.cpp
@@ -21,5 +22,6 @@ HEADERS += \
     cmr_grass.h \
     cmr_player.h \
     cmr_pokemon.h \
+    cmr_user_type.h \
     cmr_walk.h \
     cmr_wall.h

@@ -1,0 +1,7 @@
+6
+scratch	10	0	0	0	0	0
+growl	0	0	10	0	0	1
+leer	0	10	0	0	0	2
+boost	0	0	0	5	5	3
+tackle	8	0	0	0	0	0
+leach   5       0	0	4	4	3

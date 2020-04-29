@@ -19,7 +19,7 @@ public:
     string getname();
 
     void setName(string);
-protected:
+private:
     string name;
     int damage;
     int powerOp;
